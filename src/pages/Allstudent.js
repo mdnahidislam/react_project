@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import Sidebar from "./Sidebar";
 
 import "react-table/dist/react-table.development"
+import {Link} from "react-router-dom";
 
 class Allstudent extends Component {
     constructor() {
@@ -28,7 +29,7 @@ class Allstudent extends Component {
         const retur = data.map(function (par) {
             return <tbody key={par.id}><tr>
                 <td> { par.id } </td>
-                <td> { par.name } </td>
+                <td> <Link to={"/view_student/"+par.id}> { par.name } </Link> </td>
                 <td> { par.fname } </td>
                 <td> { par.mname } </td>
                 <td> { par.fnumber } </td>

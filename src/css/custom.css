@@ -1,0 +1,20 @@
+.bgs{
+    background-image: url("../img/wave.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+
+
+}
+.c-width{
+    min-width: 350px;
+}
+.c-bg{
+    background: #00cba91f;
+}
+.c-btn{
+    background: #00cba9;
+}
+.c-text{
+    color: #016151;
+}

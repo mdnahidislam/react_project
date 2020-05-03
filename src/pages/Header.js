@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import logo from "../img/logo.png";
-import {Link} from "react-router-dom";
+import {Redirect} from "react-router-dom";
+import auth from "../config/auth";
 
 class Header extends Component {
     render() {
@@ -17,7 +18,16 @@ class Header extends Component {
                                 <p className="p-0"> Shantibug, Demra, Dhaka </p>
                             </div>
                             <div className="col-md-3 d-flex justify-content-center align-items-center">
-                                <Link className="text-decoration-none text-light" to="/logout"> logout </Link>
+                                <button className="btn text-light" onClick={()=>{
+                                    auth.logout(()=>{
+                                        this.props.history.push("/login");
+
+                                    });
+                                    return(<Redirect to="/login"/>);
+
+                                }}>
+                                    logout
+                                </button>
                             </div>
                         </div>
                     </div>

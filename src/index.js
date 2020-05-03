@@ -12,6 +12,10 @@ import Get from "./pages/Get";
 import Addstudent from "./pages/Addstudent";
 import Allstudent from "./pages/Allstudent";
 import Notfound from "./pages/Notfound";
+import Viewstudent from "./pages/Viewstudent";
+import Login from "./pages/Login";
+import {ProtectedRoute} from "./config/protectedRoute";
+
 
 
 
@@ -21,7 +25,11 @@ const myrouter=(
 
 <Router>
       <Switch>
-            <Route exact path="/" component={Index} />
+            <ProtectedRoute
+                exact path="/"
+                component={Index}
+            />
+            <Route exact path="/login" component={Login} />
             <Route path="/app" component={App} />
             <Route path="/fun" component={Fun} />
             <Route path="/first" component={First} />
@@ -30,6 +38,7 @@ const myrouter=(
 
             <Route path="/new_student" component={Addstudent} />
             <Route path="/all_student" component={Allstudent} />
+            <Route path="/view_student/:id" component={Viewstudent} />
             <Route  component={Notfound} />
 
       </Switch>
